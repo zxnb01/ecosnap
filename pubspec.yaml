@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.6
   percent_indicator: ^4.2.4
   image_picker: ^1.1.2
+  rive: ^0.13.20
 
 dev_dependencies:
   flutter_test:
@@ -66,6 +67,11 @@ flutter:
     - assets/images/challenge2.png
     - assets/images/challenge3.png
     - assets/images/challenge4.png
+    - assets/images/badge1.png
+    - assets/images/badge2.png
+    - assets/images/badge3.png
+    - assets/images/user.png
+    - assets/plante.riv
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

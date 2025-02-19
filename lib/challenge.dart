@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'profile.dart';
 
 class ChallengesPage extends StatelessWidget {
   final List<Map<String, dynamic>> challenges = [
@@ -218,6 +219,50 @@ class ChallengesPage extends StatelessWidget {
           ),
         ],
       ),
+      bottomNavigationBar: BottomAppBar(
+        shape: CircularNotchedRectangle(),
+        notchMargin: 8.0,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            IconButton(
+              icon: Icon(Icons.emoji_events), // Challenges
+              onPressed: () {
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(builder: (context) => ChallengesPage()),
+                // );
+              },
+            ),
+            IconButton(
+              icon: Icon(Icons.map), // Maps
+              onPressed: () {},
+            ),
+            SizedBox(width: 48), // Space for FAB
+            IconButton(
+              icon: Icon(Icons.message), // Messages
+              onPressed: () {},
+            ),
+            IconButton(
+              icon: Icon(Icons.person), // Profile
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ProfilePage()),
+                );
+              },
+            ),
+          ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          // Handle camera action
+        },
+        backgroundColor: Colors.green,
+        child: Icon(Icons.camera_alt),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 
