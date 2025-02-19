@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:image_picker/image_picker.dart';
+import 'challenge.dart'; // Importing Challenge Page
 
 void main() {
   runApp(EcoSnapApp());
@@ -11,13 +12,16 @@ class EcoSnapApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
+      home: HomeScreen(), // Ensure home screen is set
+      routes: {
+        '/challenge': (context) => ChallengesPage(),
+      },
     );
   }
 }
 
 class HomeScreen extends StatelessWidget {
-  final int actionsToday = 3; // Change this value to test
+  final int actionsToday = 3;
   final int maxActions = 5;
   final List<int> weeklyActions = [3, 5, 2, 4, 1, 5, 0];
 
@@ -34,17 +38,16 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
-        title: TextField(
-          decoration: InputDecoration(
-            hintText: "Search...",
-            prefixIcon: Icon(Icons.search),
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(10),
-              borderSide: BorderSide.none,
-            ),
-            fillColor: Colors.grey[200],
-            filled: true,
-          ),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Colors.black),
+          onPressed: () {
+            // Ensure the navigation context is valid
+            if (Navigator.of(context).canPop()) {
+              Navigator.pop(context);
+            } else {
+              Navigator.pushReplacementNamed(context, '/challenge');
+            }
+          },
         ),
       ),
       body: Padding(
