@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'main.dart';
+import 'maps.dart';
+import 'msging.dart';
 import 'profile.dart';
 
 class ChallengesPage extends StatelessWidget {
@@ -50,7 +53,10 @@ class ChallengesPage extends StatelessWidget {
         leading: IconButton(
           icon: Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () {
-            Navigator.pop(context);
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => HomeScreen()),
+            );
           },
         ),
         title: Text(
@@ -236,12 +242,22 @@ class ChallengesPage extends StatelessWidget {
             ),
             IconButton(
               icon: Icon(Icons.map), // Maps
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => MapsPage()),
+                );
+              },
             ),
             SizedBox(width: 48), // Space for FAB
             IconButton(
               icon: Icon(Icons.message), // Messages
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => MessagingPage()),
+                );
+              },
             ),
             IconButton(
               icon: Icon(Icons.person), // Profile

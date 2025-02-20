@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'challenge.dart';
+import 'maps.dart';
+import 'msging.dart';
 
 class ProfilePage extends StatelessWidget {
   @override
@@ -108,14 +110,20 @@ class ProfilePage extends StatelessWidget {
             IconButton(
               icon: const Icon(Icons.map), // Maps
               onPressed: () {
-                // Handle navigation to MapsPage
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => MapsPage()),
+                );
               },
             ),
             const SizedBox(width: 48), // Space for FAB
             IconButton(
               icon: const Icon(Icons.message), // Messages
               onPressed: () {
-                // Handle navigation to MessagesPage
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => MessagingPage()),
+                );
               },
             ),
             IconButton(
